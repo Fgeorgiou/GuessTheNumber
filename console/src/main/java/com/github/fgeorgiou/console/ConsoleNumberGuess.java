@@ -2,18 +2,16 @@ package com.github.fgeorgiou.console;
 
 import com.github.fgeorgiou.Game;
 import com.github.fgeorgiou.MessageGenerator;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
 import java.util.Scanner;
 
+@Slf4j
 @Component
 public class ConsoleNumberGuess {
-
-    private static final Logger logger = LoggerFactory.getLogger(ConsoleNumberGuess.class);
 
     private final Game game;
     private final MessageGenerator messageGenerator;
@@ -25,7 +23,7 @@ public class ConsoleNumberGuess {
 
     @EventListener(ContextRefreshedEvent.class)
     public void start() {
-        logger.info("start() -> Container ready for use.");
+        log.info("start() -> Container ready for use.");
 
         Scanner scanner = new Scanner(System.in);
 
