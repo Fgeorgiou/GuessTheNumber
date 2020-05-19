@@ -1,15 +1,13 @@
 package com.github.fgeorgiou;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 
 @Component
+@Slf4j
 public class MessageGeneratorImpl implements MessageGenerator{
-
-    private static final Logger logger = LoggerFactory.getLogger(MessageGeneratorImpl.class);
 
     private final Game game;
 
@@ -19,7 +17,7 @@ public class MessageGeneratorImpl implements MessageGenerator{
 
     @PostConstruct
     public void init(){
-        logger.info("game = {} ", game);
+        log.info("game = {} ", game);
     }
 
     @Override
