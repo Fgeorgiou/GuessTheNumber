@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-@ComponentScan(basePackages = "org.example")
+@ComponentScan(basePackages = "com.github.fgeorgiou")
 @PropertySource("classpath:config/game.properties")
 public class GameConfig {
 
